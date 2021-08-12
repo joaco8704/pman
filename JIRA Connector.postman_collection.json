@@ -1,0 +1,773 @@
+{
+	"info": {
+		"_postman_id": "0ef9e018-6fbe-4140-a753-3d1453ecd2a0",
+		"name": "JIRA Connector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetIssue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/project/10056/statuses",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"project",
+						"10056",
+						"statuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAttachment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/attachment/15486",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"attachment",
+						"15486"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GetAttachment"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPrioritys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/priority",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"priority"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFields",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/field",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"field"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFieldsDe Pantalla",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/issue/createmeta?projectKeys=CON&expand=projects.issuetypes.fields",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"issue",
+						"createmeta"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						},
+						{
+							"key": "projectKeys",
+							"value": "CON"
+						},
+						{
+							"key": "expand",
+							"value": "projects.issuetypes.fields"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCreateMetadata",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/issue/createmeta?projectKeys=CON&expand=projects.issuetypes.fields",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"issue",
+						"createmeta"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						},
+						{
+							"key": "projectKeys",
+							"value": "CON"
+						},
+						{
+							"key": "expand",
+							"value": "projects.issuetypes.fields"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByJQL",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"expand\": [\"editmeta\"],\"jql\": \"project = PV order by created DESC\",\"maxResults\": 1,\"fieldsByKeys\": true,\"fields\": [\"*all\"],\"startAt\": 0}"
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/search",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"fields\": {\"project\": {\"key\":\"GE360\"},\"description\":{\"type\": \"doc\",\"version\": 1,\"content\": [{\"type\": \"paragraph\",\"content\": [{\"text\": \"JOAQUIN PROBANDO\",\"type\": \"text\"}]}]},\"priority\":{\"id\":\"5\"},\"summary\":\"conector, perdon\",\"issuetype\":{\"id\":\"10004\"}}}"
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/issue",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"issue"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comentar",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"fields\": {\"project\": {\"key\":\"GE360\"},\"description\":{\"type\": \"doc\",\"version\": 1,\"content\": [{\"type\": \"paragraph\",\"content\": [{\"text\": \"JOAQUIN PROBANDO\",\"type\": \"text\"}]}]},\"priority\":{\"id\":\"5\"},\"summary\":\"conector, perdon\",\"issuetype\":{\"id\":\"10004\"}}}"
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/issue",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"issue"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EstadosDeUnProyecto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"expand\": [\"renderedFields\"],\"jql\": \"key = CON-30 order by created DESC\",\"maxResults\": 1,\"fieldsByKeys\": false,\"fields\": [\"*all\"],\"startAt\": 0}"
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/project/CON/statuses",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"project",
+						"CON",
+						"statuses"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDashboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/dashboard/10032",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"dashboard",
+						"10032"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOptionsCustomField",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/customField/10036/option",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"customField",
+						"10036",
+						"option"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IssueCustomFieldOptions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
