@@ -16,7 +16,6 @@ jobs:
         uses: anthonyvscode/newman-action@v1
         with:
           collection: jira
-          environment: jira.json
           reporters: cli
 #2
       - name: Output summary to console
