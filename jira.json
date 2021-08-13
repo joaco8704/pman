@@ -15,8 +15,8 @@
 							"pm.test(\"Successful POST request\", function () {\r",
 							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
 							"});\r",
-							"pm.test(\"Response time is less than 400ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
 							"});"
 						],
 						"type": "text/javascript"
