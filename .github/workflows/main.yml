@@ -15,7 +15,7 @@ jobs:
         id: run-newman
         uses: anthonyvscode/newman-action@v1
         with:
-          collection: jira.json
+          collection: jira
           environment: jira.json
           reporters: cli
 #2
