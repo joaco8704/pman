@@ -1,0 +1,21 @@
+name: Postman tests
+on:
+  push:
+    branches: [master]
+jobs:
+  run-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name:
+        uses: actions/checkout@v2
+#1
+      - name: Run API Tests
+        id: run-newman
+        uses: anthonyvscode/newman-action@v1
+        with:
+          collection: jira.json
+          environment: jira.json
+          reporters: cli
+#2
+      - name: Output summary to console
+        run: echo ${{ steps.run-newman.outputs.summary }}
