@@ -12,7 +12,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Successful POST request\", function () {\r",
+							"pm.test(\"Successful GET request\", function () {\r",
 							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
 							"});\r",
 							"pm.test(\"Response time is less than 600ms\", function () {\r",
