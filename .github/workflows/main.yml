@@ -17,6 +17,7 @@ jobs:
         with:
           collection: jira.json
           reporters: cli
+          iteration-count: 300
 #2
       - name: Output summary to console
         run: echo ${{ steps.run-newman.outputs.summary }}
