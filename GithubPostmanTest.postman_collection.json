@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "bf4ea036-5174-40d7-97d1-b1656520b3cf",
+		"name": "GithubPostmanTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetFields",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "A0BjM0eImsDmeDjwfYMq6227",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "joaquin.delgado@valkimia.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://valkimia.atlassian.net/rest/api/3/field",
+					"protocol": "https",
+					"host": [
+						"valkimia",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"3",
+						"field"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project%3D%22SINDI%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
